@@ -1,21 +1,32 @@
+/***
+ * Entry point of the app that renders other containers with react router
+ * @
+ */
+
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+// NPM Modules
+import { Switch, Route } from 'react-router-dom';
+import { withRouter } from 'react-router';
+
+// Containers
+import Home from '../home/Home';
+
+// Router
+import ScrollToTop from '../router/ScrollToTop';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <ScrollToTop>
+          <Switch>
+            <Route exact path='/' component={Home} />
+          </Switch>
+        </ScrollToTop>
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);
