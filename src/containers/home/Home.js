@@ -19,7 +19,7 @@ class Home extends React.Component {
     return (
       <div className="Home">
         <div className={css(styles.header)}>
-          <img src={logo} className="App-logo" alt="logo" />
+          <img src={logo} className="Home-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
         <p className={css(styles.introText)}>
